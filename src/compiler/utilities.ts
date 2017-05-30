@@ -300,6 +300,11 @@ namespace ts {
         return node.kind >= SyntaxKind.FirstJSDocTagNode && node.kind <= SyntaxKind.LastJSDocTagNode;
     }
 
+    //mv
+    export function isClassDeclaration(node: Node): node is ClassDeclaration {
+        return node.kind === SyntaxKind.ClassDeclaration;
+    }
+
     export function getNonDecoratorTokenPosOfNode(node: Node, sourceFile?: SourceFileLike): number {
         if (nodeIsMissing(node) || !node.decorators) {
             return getTokenPosOfNode(node, sourceFile);
