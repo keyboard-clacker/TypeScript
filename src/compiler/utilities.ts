@@ -304,6 +304,9 @@ namespace ts {
     export function isClassDeclaration(node: Node): node is ClassDeclaration {
         return node.kind === SyntaxKind.ClassDeclaration;
     }
+    export function isModuleDeclaration(node: Node): node is ModuleDeclaration {
+        return node.kind === SyntaxKind.ModuleDeclaration;
+    }
 
     export function getNonDecoratorTokenPosOfNode(node: Node, sourceFile?: SourceFileLike): number {
         if (nodeIsMissing(node) || !node.decorators) {
